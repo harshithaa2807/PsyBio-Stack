@@ -252,7 +252,7 @@ def main(feature_path, meta_path, target_col,
             X_val_proc_micro = np.log1p(X_val_rel.replace(0, 1e-6))
             X_test_proc_micro = np.log1p(X_test_rel.replace(0, 1e-6))
 
-        # attach covariates (if any)
+        # attach covariates
         if covariates_df is not None:
             X_train_full = pd.concat([X_train_proc_micro, covariates_df.loc[X_train_proc_micro.index]], axis=1)
             X_val_full = pd.concat([X_val_proc_micro, covariates_df.loc[X_val_proc_micro.index]], axis=1)
@@ -398,7 +398,7 @@ def main(feature_path, meta_path, target_col,
             'bundle_path': os.path.join(results_dir, f"pipeline_bundle_{transform_name}.pkl"),
             'selected_features': sel_cols.tolist()
         })
-        # ✅ Save final trained model for SHAP interpretation
+        # Save final trained model for SHAP interpretation
         model_save_path = os.path.join(results_dir, f"final_model_{transform_name}.pkl")
         joblib.dump(stacking, model_save_path, compress=3)
         print(f"Saved final trained model → {model_save_path}")
@@ -432,3 +432,4 @@ if __name__ == "__main__":
     p.add_argument("--seed", type=int, default=42)
     args = p.parse_args()
     main(args.feature, args.meta, args.target, prevalence_cutoff=args.prevalence, k=args.k, pca_energy=args.pca, transform_choice=args.transform, bagged_runs=args.runs, cv_folds=args.cv, random_state=args.seed)
+
