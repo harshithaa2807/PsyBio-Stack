@@ -1,10 +1,14 @@
 **PsyBio-Stack**
 PsyBio-Stack is a machine learning framework for analyzing gut microbiome data to predict psychiatric disorders.
+
 This repository contains the processed datasets and analysis scripts used in the study:
+
 "PsyBio-Stack: A Machine Learning Framework Linking Gut Microbiome and Psychiatric Disorders"
 
 **Repository Structure**
+
 data
+
 •	metadata.tsv — sample metadata containing clinical information.
 
 •	feature-table.tsv — microbial abundance feature table used as input for the machine learning model.
@@ -17,12 +21,19 @@ scripts
 •	gen_ai_pipeline.py — interpretability and generative AI–based analysis of microbial features.
 
 **Requirements**
+
 Python packages required:
+
 •	numpy
+
 •	pandas
+
 •	scikit-learn
+
 •	matplotlib
+
 •	seaborn
+
 •	joblib
 
 **Example Usage**
