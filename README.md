@@ -7,12 +7,13 @@ This repository contains the processed datasets and analysis scripts used in the
 
 **Repository Structure**
 
-data
+_**data**_
 
 •	metadata.tsv — sample metadata containing clinical information.
 
 •	feature-table.tsv — microbial abundance feature table used as input for the machine learning model.
-scripts
+
+_**scripts**_
 
 •	main_script.py — main machine learning pipeline for training and evaluating the predictive model.
 
